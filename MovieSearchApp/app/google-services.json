@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "217082060194",
+    "project_id": "moviesearchapp-f904d",
+    "storage_bucket": "moviesearchapp-f904d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217082060194:android:7e7dd8bbcad4e0f79ce6fb",
+        "android_client_info": {
+          "package_name": "com.example.moviesearchapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoJ3x4SQjNPcBG3C83VrrMRkwgmq9ZqEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
