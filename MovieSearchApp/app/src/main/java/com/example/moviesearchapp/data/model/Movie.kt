@@ -1,24 +1,26 @@
 package com.example.moviesearchapp.data.model
 
-import com.google.gson.annotations.SerializedName
-
 data class Movie(
-    @SerializedName("imdbID") val imdbID: String,
-    @SerializedName("Title") val title: String,
-    @SerializedName("Year") val year: String,
-    @SerializedName("Rated") val rated: String?,
-    @SerializedName("Released") val released: String?,
-    @SerializedName("Runtime") val runtime: String?,
-    @SerializedName("Genre") val genre: String?,
-    @SerializedName("Director") val director: String?,
-    @SerializedName("Writer") val writer: String?,
-    @SerializedName("Actors") val actors: String?,
-    @SerializedName("Plot") val plot: String?,
-    @SerializedName("Language") val language: String?,
-    @SerializedName("Country") val country: String?,
-    @SerializedName("Awards") val awards: String?,
-    @SerializedName("Poster") val poster: String?,
-    @SerializedName("Metascore") val metascore: String?,
-    @SerializedName("imdbRating") val imdbRating: String?,
-    @SerializedName("Production") val production: String?
-)
+    val imdbID: String = "",
+    val title: String = "",
+    val year: String = "",
+    val rated: String = "",
+    val released: String = "",
+    val runtime: String = "",
+    val genre: String = "",
+    val director: String = "",
+    val writer: String = "",
+    val actors: String = "",
+    val plot: String = "",
+    val language: String = "",
+    val country: String = "",
+    val awards: String = "",
+    val poster: String = "",
+    val metascore: String = "",
+    val imdbRating: String = "",
+    val production: String = "",
+    val userId: String = "", // Assuming userId is needed for each movie entry
+    var documentId: String = "" // Firestore document ID (if updating an existing movie)
+) {
+    val Search:String=""
+}

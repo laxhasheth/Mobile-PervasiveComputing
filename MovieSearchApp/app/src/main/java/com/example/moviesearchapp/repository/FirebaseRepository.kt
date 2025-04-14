@@ -68,7 +68,7 @@ class FirebaseRepository {
 
             snapshot.documents.mapNotNull { document ->
                 document.toObject(Movie::class.java)?.apply {
-                    documentId = document.id  // Get the documentId for updates and deletion
+                    documentId= document.id  // Get the documentId for updates and deletion
                 }
             }
         } catch (e: Exception) {

@@ -8,7 +8,7 @@ import kotlinx.coroutines.withContext
 
 class MovieRepository {
 
-    private val apiKey = "f7c44cdb" // OMB API KEY
+    private val apiKey = "f7c44cdb" // OMDB API KEY
 
     // Function to search movies based on query
     suspend fun searchMovies(query: String): List<Movie>? {
@@ -16,16 +16,13 @@ class MovieRepository {
             try {
                 val response = RetrofitInstance.apiService.searchMovies(query, apiKey)
                 if (response.isSuccessful) {
-                    // Assuming the correct property name is "Search" from MovieSearchResponse
-                    response.body()?.movies
+                    response.body()?.Search // ✅ returns List<Movie>
                 } else {
-                    // Log error with more information about the API response
-                    Log.e("MovieRepository", "API Error: ${response.errorBody()?.string()}")
+                    Log.e("MovieRepository", "API Error (searchMovies): ${response.message()}")
                     null
                 }
             } catch (e: Exception) {
-                // Log network errors
-                Log.e("MovieRepository", "Network Error: ${e.message}", e)
+                Log.e("MovieRepository", "Network Error (searchMovies): ${e.message}", e)
                 null
             }
         }
@@ -37,16 +34,13 @@ class MovieRepository {
             try {
                 val response = RetrofitInstance.apiService.getMovieDetails(imdbID, apiKey)
                 if (response.isSuccessful) {
-                    // Return the movie details if the response is successful
-                    response.body()
+                    response.body() // ✅ returns a single Movie object
                 } else {
-                    // Log API error with more details
-                    Log.e("MovieRepository", "API Error: ${response.errorBody()?.string()}")
+                    Log.e("MovieRepository", "API Error (getMovieDetails): ${response.message()}")
                     null
                 }
             } catch (e: Exception) {
-                // Log network exceptions with detailed message
-                Log.e("MovieRepository", "Network Error: ${e.message}", e)
+                Log.e("MovieRepository", "Network Error (getMovieDetails): ${e.message}", e)
                 null
             }
         }

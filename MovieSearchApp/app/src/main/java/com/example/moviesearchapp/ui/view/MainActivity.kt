@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 val response = RetrofitInstance.apiService.searchMovies(query, "f7c44cdb")
                 if (response.isSuccessful) {
-                    val movies = response.body()?.movies
+                    val movies = response.body()?.Search
                     if (movies != null) {
                         // Set up the adapter with movies
                         binding.recyclerView.adapter = MovieAdapter(movies) { movie ->
